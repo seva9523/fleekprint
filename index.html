@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Fleek Impact Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="shell">
     <header class="topbar">
-      <div class="brand">✦ FLEEK<span>IMPACT</span></div>
+      <div class="brand">FLEEK<span> IMPACT</span></div>
       <nav id="nav" class="nav">
         <button class="active" data-view="checkout">Order demo</button>
         <button data-view="buyer">Buyer dashboard</button>
@@ -33,9 +36,9 @@
             <div class="art">🧥</div>
             <div>
               <p class="eyebrow">SIMULATED FLEEK CHECKOUT</p>
-              <h2>50-piece mixed vintage bundle</h2>
-              <p class="muted">Seller: North Star Wholesale<br>Buyer: Second Story Vintage<br>50 garments · 35 kg · Mixed bundle</p>
-              <div class="price">£400</div>
+              <h2>5,000-piece mixed circular sourcing order</h2>
+              <p class="muted">Seller: North Star Wholesale<br>Buyer: Primark (Demo)<br>5,000 garments · 3,500 kg · Mixed bundle</p>
+              <div class="price">£40,000</div>
               <button id="purchaseBtn" class="primary">Complete purchase</button>
               <button id="newOrderBtn" class="secondary hidden">Simulate another order</button>
               <div id="status" class="status hidden">✓ Order added. Receipt, dashboards and Impact Passport updated.</div>
@@ -54,7 +57,7 @@
       </section>
 
       <section id="buyer" class="view">
-        <div class="section-head"><div><p class="eyebrow">BUYER DASHBOARD</p><h2>Second Story Vintage</h2></div><span class="pill">Impact from inventory sourced</span></div>
+        <div class="section-head"><div><p class="eyebrow">BUYER DASHBOARD</p><h2>Primark (Demo)</h2></div><span class="pill">Impact from inventory sourced</span></div>
         <div id="buyerMetrics" class="metrics"></div>
         <div class="grid two">
           <article class="card"><p class="eyebrow">CO₂e BY ORDER</p><div id="buyerChart" class="bars"></div></article>
@@ -82,7 +85,7 @@
             <div class="win-box"><b>Customer value</b><span>Partner recommendation instead of searching alone</span><span>Impact Passport prepared from Fleek transactions</span><span>Fewer documents and less repetitive data entry</span><span>Faster route to sustainability services and carbon-removal options</span></div>
             <button id="connectBtn" class="primary">Review consent and see the business case</button>
           </article>
-          <aside class="card passport"><p class="eyebrow">LIVE IMPACT PASSPORT</p><h2>Second Story Vintage</h2><div id="passportRows"></div></aside>
+          <aside class="card passport"><p class="eyebrow">LIVE IMPACT PASSPORT</p><h2>Primark (Demo)</h2><div id="passportRows"></div></aside>
         </div>
         <div class="value-grid">
           <div class="value-card"><b>Buyer</b><span>Faster onboarding and reporting-ready impact data.</span></div>
@@ -93,7 +96,7 @@
       </section>
     </main>
 
-    <footer>Prototype only. Impact and commercial figures are illustrative assumptions, not Carbonfuture pricing or an agreed partnership. Production requires audited factors, Fleek webhooks, secure storage and partner approval.</footer>
+    <footer>Prototype only. Primark is used as an illustrative demo customer and no partnership is implied. Impact and commercial figures are illustrative assumptions, not Carbonfuture pricing or an agreed partnership.</footer>
   </div>
 
   <div id="receiptModal" class="modal"><div class="modal-card receipt"><p class="eyebrow">AUTOMATIC IMPACT RECEIPT</p><h2 id="receiptTitle"></h2><p id="receiptMeta"></p><div id="receiptGrid" class="receipt-grid"></div><div class="modal-actions"><button onclick="window.print()" class="primary">Save / print</button><button class="secondary" data-close="receiptModal">Close</button></div></div></div>
@@ -109,7 +112,7 @@
     </div>
     <div class="benefit-list">
       <h3>Illustrative Carbonfuture economics</h3>
-      <div><b>Estimated annual customer value: <span id="annualValue">£230</span></b><span>Potential annual value of an activated SME customer.</span></div>
+      <div><b>Estimated annual customer value: <span id="annualValue">£230</span></b><span>Potential annual value of an activated customer.</span></div>
       <div><b>Acquisition cost without Fleek: <span id="cacWithout">£250</span></b><span>Marketing, sales qualification and manual onboarding.</span></div>
       <div><b>Acquisition cost with Fleek: <span id="cacWith">£70</span></b><span>A pre-qualified customer with an Impact Passport already prepared.</span></div>
       <div><b>Gross acquisition saving: <span id="cacSaving">£180</span></b><span>The illustrative difference before paying Fleek.</span></div>
