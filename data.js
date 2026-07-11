@@ -13,4 +13,17 @@ const SEED_ORDERS=[
 ];
 
 const DEMO_ORDER={buyer:'Second Story Vintage',seller:'North Star Wholesale',items:50,weight:35,value:400,category:'mixed'};
-const COMMERCIAL_ASSUMPTIONS={annualCustomerValue:249,enablementRevenue:30,activationThresholdKg:1000};
+
+// All commercial figures below are illustrative hackathon assumptions, not Carbonfuture pricing or an agreed partnership.
+const COMMERCIAL_ASSUMPTIONS={
+  annualCustomerValue:230,
+  acquisitionCostWithoutFleek:250,
+  acquisitionCostWithFleek:70,
+  acquisitionSaving:180,
+  fleekEnablementFee:40,
+  carbonfutureNetSaving:140,
+  onboardingWithoutFleek:'2–3 days',
+  onboardingWithFleek:'~5 minutes',
+  documentsRemoved:8,
+  activationThresholdKg:1000
+};
