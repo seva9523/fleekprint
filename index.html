@@ -1,46 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fleek Impact Connect</title>
-<style>
-:root{--bg:#f5f2eb;--card:#fff;--ink:#111;--muted:#666;--green:#94ff4d;--line:#ddd7cc;--dark:#101010;--soft:#ece8df;--blue:#dfe8ff}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}button{font:inherit}.shell{max-width:1180px;margin:auto;padding:24px}.topbar{display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-size:24px;font-weight:900}.brand b{color:#5f9f35}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button{border:0;background:transparent;padding:10px 15px;border-radius:999px;font-weight:800;cursor:pointer}.nav button.active{background:var(--dark);color:#fff}.hero{display:flex;justify-content:space-between;gap:30px;align-items:end;margin:34px 0}.hero h1{font-size:clamp(40px,6vw,72px);line-height:.96;letter-spacing:-3px;max-width:800px;margin:0}.hero p{max-width:430px;color:var(--muted);font-size:18px}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 35px rgba(0,0,0,.05)}.dark{background:var(--dark);color:#fff}.eyebrow{font-size:12px;letter-spacing:.08em;font-weight:900;color:var(--muted)}.dark .eyebrow{color:#aaa}.product{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center}.art{height:170px;border-radius:20px;background:linear-gradient(140deg,#9cff57,#eef5d9 55%,#cab8ff);display:grid;place-items:center;font-size:60px}.meta{color:var(--muted);line-height:1.7}.dark .meta{color:#bbb}.price{font-size:34px;font-weight:900;margin:12px 0}.cta,.ghost,.reset{border:0;border-radius:999px;padding:13px 18px;font-weight:900;cursor:pointer}.cta{background:var(--green)}.ghost{background:var(--soft)}.reset{background:transparent;border:1px solid var(--line)}.status{display:none;margin-top:16px;padding:14px;border-radius:14px;background:#eaffda;font-weight:800}.status.show{display:block}.flow{display:grid;gap:12px;margin-top:18px}.step{padding:14px;border:1px solid #343434;border-radius:16px}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}.metric{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px}.metric small{color:var(--muted);font-weight:800}.metric strong{display:block;font-size:30px;margin-top:8px}.dash-head{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.pill{background:#eaffda;padding:9px 13px;border-radius:999px;font-weight:800}.bars{display:flex;align-items:end;gap:12px;height:180px}.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:8px}.bar{width:100%;max-width:55px;background:var(--green);border-radius:10px 10px 3px 3px}.bar-label{font-size:12px;color:var(--muted)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:14px 10px;border-bottom:1px solid var(--line)}th{font-size:12px;color:var(--muted)}.empty{padding:40px;text-align:center;color:var(--muted)}.passport{background:#111;color:#fff}.passport-row{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid #333}.passport-row span{color:#aaa}.notice{background:var(--blue);padding:16px;border-radius:16px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal.show{display:flex}.modal-card{width:min(650px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:28px;padding:28px}.receipt{background:#111;color:#fff}.receipt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.receipt-cell{background:#1c1c1c;border:1px solid #333;border-radius:16px;padding:15px}.receipt-cell small{color:#aaa}.receipt-cell strong{display:block;font-size:24px;margin-top:6px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.footer{margin:30px 0;color:var(--muted);font-size:13px}@media(max-width:850px){.grid{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr 1fr}.hero{display:block}.product{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.metric-grid,.receipt-grid{grid-template-columns:1fr}.nav{width:100%}.nav button{flex:1}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fleek Impact Connect</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="shell">
-<header class="topbar"><div class="brand">✦ FLEEK<b>PRINT</b></div><nav class="nav"><button class="active" data-view="checkout">Order demo</button><button data-view="buyer">Buyer dashboard</button><button data-view="seller">Seller dashboard</button><button data-view="marketplace">Impact Connect</button></nav></header>
-<section class="hero"><h1>Measure impact. Keep the receipt. Connect to real climate infrastructure.</h1><p>Every completed order creates one shared impact record that updates both dashboards and prepares a partner-ready Impact Passport.</p></section>
-<main>
-<section id="checkout" class="view active"><div class="grid"><article class="card"><div class="eyebrow">SIMULATED FLEEK CHECKOUT</div><div class="product"><div class="art">🧥</div><div><h2>50-piece mixed vintage bundle</h2><div class="meta">Seller: North Star Wholesale<br>Buyer: Second Story Vintage<br>50 garments · 35 kg · Mixed bundle</div><div class="price">£400</div><button id="purchaseBtn" class="cta">Complete purchase</button> <button id="newOrderBtn" class="ghost" style="display:none">Simulate another order</button><div id="statusBox" class="status">✓ Receipt generated, dashboards updated, and Impact Passport refreshed.</div></div></div></article><aside class="card dark"><div class="eyebrow">AUTOMATIC FLOW</div><h2>No forms. No double counting.</h2><div class="flow"><div class="step"><b>1. Order event</b><div class="meta">Fleek sends buyer, seller, quantity, category, weight and value.</div></div><div class="step"><b>2. Impact record</b><div class="meta">One record powers the receipt and both dashboards.</div></div><div class="step"><b>3. Partner handoff</b><div class="meta">The user reviews and shares an Impact Passport.</div></div></div></aside></div></section>
-<section id="buyer" class="view"><div class="dash-head"><div><div class="eyebrow">BUYER DASHBOARD</div><h2>Second Story Vintage</h2></div><div class="pill">Impact from inventory sourced</div></div><div id="buyerMetrics" class="metric-grid"></div><div class="grid"><article class="card"><div class="eyebrow">IMPACT BY ORDER</div><h3>CO₂e avoided</h3><div id="buyerChart" class="bars"></div></article><article class="card"><h3>Next step</h3><p class="meta">Prepare a partner-ready impact record.</p><button class="cta" data-open-marketplace>Open Impact Connect</button></article></div><article class="card"><div class="dash-head"><h3>Impact receipts</h3><button class="reset" data-reset>Reset demo data</button></div><div id="buyerTable"></div></article></section>
-<section id="seller" class="view"><div class="dash-head"><div><div class="eyebrow">SELLER DASHBOARD</div><h2>North Star Wholesale</h2></div><div class="pill">Impact from stock recirculated</div></div><div id="sellerMetrics" class="metric-grid"></div><div class="grid"><article class="card"><div class="eyebrow">IMPACT BY ORDER</div><h3>Garments kept in circulation</h3><div id="sellerChart" class="bars"></div></article><article class="card"><h3>Next step</h3><p class="meta">Prepare a partner-ready impact record.</p><button class="cta" data-open-marketplace>Open Impact Connect</button></article></div><article class="card"><div class="dash-head"><h3>Completed orders</h3><button class="reset" data-reset>Reset demo data</button></div><div id="sellerTable"></div></article></section>
-<section id="marketplace" class="view"><div class="dash-head"><div><div class="eyebrow">FLEEK IMPACT CONNECT</div><h2>Real partner handoff</h2></div><div class="pill">Connector, not marketplace</div></div><div class="grid"><article class="card"><h2>Carbonfuture</h2><p class="meta">Fleek prepares an Impact Passport, asks for consent, and then hands the user to Carbonfuture's real API and partnership pathway.</p><button id="connectBtn" class="cta">Connect</button><hr style="border:0;border-top:1px solid var(--line);margin:24px 0"><div class="notice"><b>What is real?</b><br>The handoff opens Carbonfuture's real API product page. A production transaction requires approved credentials and a server-side integration.</div></article><aside class="card passport"><div class="eyebrow">LIVE IMPACT PASSPORT</div><h2>Second Story Vintage</h2><div id="passportRows"></div></aside></div></section>
-</main><p class="footer"><b>Prototype:</b> GitHub Pages + browser storage. Production would use Fleek order webhooks, a database, audited factors, secure consent and server-side partner credentials.</p>
-</div>
-<div id="receiptModal" class="modal"><div class="modal-card receipt"><div class="eyebrow">FLEEKPRINT · AUTOMATIC IMPACT RECEIPT</div><h2 id="receiptTitle"></h2><div id="receiptOrder"></div><div id="receiptGrid" class="receipt-grid"></div><div class="actions"><button class="cta" id="printBtn">Save / print</button><button class="ghost" data-close="receiptModal">Close</button></div></div></div>
-<div id="consentModal" class="modal"><div class="modal-card"><div class="eyebrow">IMPACT PASSPORT CONSENT</div><h2>Share this profile with Carbonfuture?</h2><div id="consentRows" class="card passport"></div><label style="display:flex;gap:10px;margin:18px 0"><input id="consentCheck" type="checkbox"> I authorise Fleek to prepare this Impact Passport.</label><div class="actions"><button id="continueBtn" class="cta">Continue to Carbonfuture</button><button class="ghost" data-close="consentModal">Cancel</button></div></div></div>
-<script>
-(()=>{
-const $=id=>document.getElementById(id);const STORAGE_KEY='fleekprint_orders_v4';
-const factors={mixed:{co2:6,water:1000,label:'Mixed'}};const base={buyer:'Second Story Vintage',seller:'North Star Wholesale',items:50,weight:35,value:400,category:'mixed'};
-const getOrders=()=>{try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||[]}catch{return []}};const setOrders=x=>localStorage.setItem(STORAGE_KEY,JSON.stringify(x));
-function makeOrder(){const x=getOrders(),n=1042+x.length,f=factors.mixed;return{...base,id:`FLK-2026-${n}`,receiptId:`IMP-FLK-${n}`,date:new Date().toISOString(),co2:Math.round(base.weight*f.co2),water:base.items*f.water,cost:base.value/base.items,categoryLabel:f.label}}
-function totals(x){return x.reduce((a,o)=>({orders:a.orders+1,items:a.items+o.items,weight:a.weight+o.weight,co2:a.co2+o.co2,water:a.water+o.water,value:a.value+o.value}),{orders:0,items:0,weight:0,co2:0,water:0,value:0})}
-function metricHTML(t){return `<div class="metric"><small>TOTAL ORDERS</small><strong>${t.orders}</strong></div><div class="metric"><small>GARMENTS</small><strong>${t.items}</strong></div><div class="metric"><small>TEXTILES KEPT IN USE</small><strong>${t.weight} kg</strong></div><div class="metric"><small>EST. CO₂e AVOIDED</small><strong>${t.co2} kg</strong></div><div class="metric"><small>EST. WATER SAVED</small><strong>${t.water.toLocaleString()} L</strong></div><div class="metric"><small>ORDER VALUE</small><strong>£${t.value}</strong></div><div class="metric"><small>AVG ITEMS / ORDER</small><strong>${t.orders?Math.round(t.items/t.orders):0}</strong></div><div class="metric"><small>IMPACT RECORDS</small><strong>${t.orders}</strong></div>`}
-function chartHTML(x,key){if(!x.length)return '<div class="empty">Complete an order to see the chart.</div>';const m=Math.max(...x.map(o=>o[key]),1);return x.slice(0,6).reverse().map(o=>`<div class="bar-wrap"><div class="bar" style="height:${Math.max(8,o[key]/m*130)}px"></div><div class="bar-label">${o.id.slice(-4)}</div></div>`).join('')}
-function tableHTML(x,role){if(!x.length)return '<div class="empty">No receipts yet.</div>';return `<table><thead><tr><th>ORDER</th><th>DATE</th><th>${role==='buyer'?'SELLER':'BUYER'}</th><th>GARMENTS</th><th>CO₂e</th><th></th></tr></thead><tbody>${x.map((o,i)=>`<tr><td><b>${o.id}</b></td><td>${new Date(o.date).toLocaleDateString()}</td><td>${role==='buyer'?o.seller:o.buyer}</td><td>${o.items}</td><td>${o.co2} kg</td><td><button class="reset" data-receipt-index="${i}">View</button></td></tr>`).join('')}</tbody></table>`}
-function passportHTML(t){return `<div class="passport-row"><span>Business</span><b>Second Story Vintage</b></div><div class="passport-row"><span>Fleek orders</span><b>${t.orders}</b></div><div class="passport-row"><span>Garments recirculated</span><b>${t.items}</b></div><div class="passport-row"><span>Textiles kept in use</span><b>${t.weight} kg</b></div><div class="passport-row"><span>Estimated CO₂e avoided</span><b>${(t.co2/1000).toFixed(2)} t</b></div>`}
-function renderAll(){const x=getOrders(),t=totals(x);$('buyerMetrics').innerHTML=metricHTML(t);$('sellerMetrics').innerHTML=metricHTML(t);$('buyerChart').innerHTML=chartHTML(x,'co2');$('sellerChart').innerHTML=chartHTML(x,'items');$('buyerTable').innerHTML=tableHTML(x,'buyer');$('sellerTable').innerHTML=tableHTML(x,'seller');$('passportRows').innerHTML=passportHTML(t);$('consentRows').innerHTML=passportHTML(t);document.querySelectorAll('[data-receipt-index]').forEach(b=>b.onclick=()=>openReceipt(x[Number(b.dataset.receiptIndex)]))}
-function openReceipt(o){$('receiptTitle').textContent=`${o.buyer} × ${o.seller}`;$('receiptOrder').textContent=`${o.receiptId} · Order ${o.id}`;$('receiptGrid').innerHTML=`<div class="receipt-cell"><small>GARMENTS</small><strong>${o.items}</strong></div><div class="receipt-cell"><small>TEXTILES</small><strong>${o.weight} kg</strong></div><div class="receipt-cell"><small>EST. CO₂e</small><strong>${o.co2} kg</strong></div><div class="receipt-cell"><small>EST. WATER</small><strong>${o.water.toLocaleString()} L</strong></div>`;$('receiptModal').classList.add('show')}
-function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
-$('purchaseBtn').onclick=()=>{const o=makeOrder(),x=getOrders();x.unshift(o);setOrders(x);$('purchaseBtn').style.display='none';$('newOrderBtn').style.display='inline-block';$('statusBox').classList.add('show');renderAll();openReceipt(o)};
-$('newOrderBtn').onclick=()=>{$('purchaseBtn').style.display='inline-block';$('newOrderBtn').style.display='none';$('statusBox').classList.remove('show')};
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelectorAll('[data-open-marketplace]').forEach(b=>b.onclick=()=>showView('marketplace'));document.querySelectorAll('[data-reset]').forEach(b=>b.onclick=()=>{if(confirm('Clear all simulated orders?')){localStorage.removeItem(STORAGE_KEY);renderAll();showView('checkout')}});document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).classList.remove('show'));
-$('connectBtn').onclick=()=>{$('consentCheck').checked=false;$('consentModal').classList.add('show')};$('continueBtn').onclick=()=>{if(!$('consentCheck').checked){alert('Please confirm consent before continuing.');return}window.open('https://www.carbonfuture.com/products/api','_blank','noopener,noreferrer');$('consentModal').classList.remove('show')};$('printBtn').onclick=()=>window.print();
-renderAll();
-})();
-</script>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">✦ FLEEK<span>IMPACT</span></div>
+      <nav id="nav" class="nav">
+        <button class="active" data-view="checkout">Order demo</button>
+        <button data-view="buyer">Buyer dashboard</button>
+        <button data-view="seller">Seller dashboard</button>
+        <button data-view="connect">Impact Connect</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CIRCULAR COMMERCE INFRASTRUCTURE</p>
+        <h1>From every order to measurable impact and commercial value.</h1>
+      </div>
+      <p>Fleek automatically creates impact receipts, updates buyer and seller dashboards, and prepares qualified businesses for climate-platform onboarding.</p>
+    </section>
+
+    <main>
+      <section id="checkout" class="view active">
+        <div class="grid two">
+          <article class="card product-card">
+            <div class="art">🧥</div>
+            <div>
+              <p class="eyebrow">SIMULATED FLEEK CHECKOUT</p>
+              <h2>50-piece mixed vintage bundle</h2>
+              <p class="muted">Seller: North Star Wholesale<br>Buyer: Second Story Vintage<br>50 garments · 35 kg · Mixed bundle</p>
+              <div class="price">£400</div>
+              <button id="purchaseBtn" class="primary">Complete purchase</button>
+              <button id="newOrderBtn" class="secondary hidden">Simulate another order</button>
+              <div id="status" class="status hidden">✓ Order added. Receipt, dashboards and Impact Passport updated.</div>
+            </div>
+          </article>
+          <aside class="card dark">
+            <p class="eyebrow">AUTOMATIC FLOW</p>
+            <h2>No forms. No duplicate counting.</h2>
+            <div class="flow">
+              <div><b>1. Order event</b><span>Fleek supplies buyer, seller, category, quantity, weight and value.</span></div>
+              <div><b>2. Shared impact record</b><span>One receipt appears in both dashboards.</span></div>
+              <div><b>3. Commercial activation</b><span>Qualified users receive a partner recommendation and consent-based handoff.</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="buyer" class="view">
+        <div class="section-head"><div><p class="eyebrow">BUYER DASHBOARD</p><h2>Second Story Vintage</h2></div><span class="pill">Impact from inventory sourced</span></div>
+        <div id="buyerMetrics" class="metrics"></div>
+        <div class="grid two">
+          <article class="card"><p class="eyebrow">CO₂e BY ORDER</p><div id="buyerChart" class="bars"></div></article>
+          <article class="card advisor"><p class="eyebrow">AI SUSTAINABILITY ADVISOR</p><h3 id="buyerAdvice"></h3><p id="buyerAdviceText" class="muted"></p><button class="primary" data-open-connect>Open Impact Connect</button></article>
+        </div>
+        <article class="card"><div class="section-head"><h3>Impact receipts</h3><button class="text-btn" data-reset>Reset demo data</button></div><div id="buyerTable"></div></article>
+      </section>
+
+      <section id="seller" class="view">
+        <div class="section-head"><div><p class="eyebrow">SELLER DASHBOARD</p><h2>North Star Wholesale</h2></div><span class="pill">Impact from stock recirculated</span></div>
+        <div id="sellerMetrics" class="metrics"></div>
+        <div class="grid two">
+          <article class="card"><p class="eyebrow">GARMENTS BY ORDER</p><div id="sellerChart" class="bars"></div></article>
+          <article class="card advisor"><p class="eyebrow">AI SUSTAINABILITY ADVISOR</p><h3 id="sellerAdvice"></h3><p id="sellerAdviceText" class="muted"></p><button class="primary" data-open-connect>Open Impact Connect</button></article>
+        </div>
+        <article class="card"><div class="section-head"><h3>Completed orders</h3><button class="text-btn" data-reset>Reset demo data</button></div><div id="sellerTable"></div></article>
+      </section>
+
+      <section id="connect" class="view">
+        <div class="section-head"><div><p class="eyebrow">FLEEK IMPACT CONNECT</p><h2>Turn verified activity into partner value.</h2></div><span class="pill">Connector, not marketplace</span></div>
+        <div class="grid two">
+          <article class="card">
+            <div class="partner-top"><div><p class="eyebrow">RECOMMENDED PARTNER</p><h2>Carbonfuture</h2><p class="muted">A real carbon-removal infrastructure provider. Fleek prepares a qualified customer and verified activity summary before the user continues to the partner.</p></div><span class="match">BEST MATCH</span></div>
+            <div id="commercialMetrics" class="commercial-grid"></div>
+            <div class="win-box"><b>Why Carbonfuture benefits</b><span>Pre-qualified customer</span><span>Verified transaction history</span><span>Lower onboarding friction</span><span>Potentially lower acquisition cost</span></div>
+            <button id="connectBtn" class="primary">Review consent and connect</button>
+          </article>
+          <aside class="card passport"><p class="eyebrow">LIVE IMPACT PASSPORT</p><h2>Second Story Vintage</h2><div id="passportRows"></div></aside>
+        </div>
+        <div class="value-grid">
+          <div class="value-card"><b>Buyer</b><span>Effortless sustainability reporting and partner access.</span></div>
+          <div class="value-card"><b>Seller</b><span>Proof of circular contribution across multiple buyers.</span></div>
+          <div class="value-card"><b>Carbonfuture</b><span>Qualified SME customers with structured activity data.</span></div>
+          <div class="value-card"><b>Fleek</b><span>New enablement, API or revenue-share opportunities.</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Prototype only. Impact values and commercial figures are illustrative. Production requires audited factors, Fleek webhooks, secure storage and an approved Carbonfuture partnership.</footer>
+  </div>
+
+  <div id="receiptModal" class="modal"><div class="modal-card receipt"><p class="eyebrow">AUTOMATIC IMPACT RECEIPT</p><h2 id="receiptTitle"></h2><p id="receiptMeta"></p><div id="receiptGrid" class="receipt-grid"></div><div class="modal-actions"><button onclick="window.print()" class="primary">Save / print</button><button class="secondary" data-close="receiptModal">Close</button></div></div></div>
+
+  <div id="consentModal" class="modal"><div class="modal-card"><p class="eyebrow">IMPACT PASSPORT CONSENT</p><h2>Share this profile with Carbonfuture?</h2><p class="muted">This demo shares only business identity, order count and aggregated impact. Buyer names, seller names, order values and pricing are excluded.</p><div id="consentRows" class="passport compact"></div><label class="consent"><input id="consentCheck" type="checkbox"> I authorise Fleek to prepare this Impact Passport for Carbonfuture.</label><div class="modal-actions"><button id="continueBtn" class="primary">Continue to Carbonfuture</button><button class="secondary" data-close="consentModal">Cancel</button></div></div></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
