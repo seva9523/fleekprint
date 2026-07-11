@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FleekPrint turns secondhand wholesale orders into clear, shareable impact receipts." />
+  <title>FleekPrint — Every bundle leaves a better footprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="FleekPrint home">
+      <span class="brand-mark">✦</span>
+      <span>FLEEK<span class="brand-accent">PRINT</span></span>
+    </a>
+    <span class="track-pill">Circular Moonshot</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">IMPACT, MADE VISIBLE</div>
+      <h1>Every bundle leaves<br><span>a better footprint.</span></h1>
+      <p>Turn any Fleek wholesale order into a transparent, shareable estimate of garments recirculated, textile waste diverted, and environmental savings.</p>
+    </section>
+
+    <section class="workspace">
+      <form id="impactForm" class="panel form-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="step">STEP 01</p>
+            <h2>Enter order details</h2>
+          </div>
+          <button type="button" id="demoBtn" class="text-button">Use demo order</button>
+        </div>
+
+        <div class="field-grid">
+          <label>
+            Shop name
+            <input id="shopName" type="text" value="North London Vintage" maxlength="40" required />
+          </label>
+          <label>
+            Order ID
+            <input id="orderId" type="text" value="FLK-2026-0711" maxlength="30" required />
+          </label>
+          <label>
+            Garments
+            <input id="itemCount" type="number" min="1" max="10000" value="50" required />
+          </label>
+          <label>
+            Bundle category
+            <select id="category" required>
+              <option value="mixed">Mixed bundle</option>
+              <option value="denim">Denim</option>
+              <option value="tshirts">T-shirts</option>
+              <option value="hoodies">Hoodies & sweatshirts</option>
+              <option value="jackets">Jackets</option>
+              <option value="dresses">Dresses</option>
+            </select>
+          </label>
+          <label>
+            Total weight (kg)
+            <input id="weight" type="number" min="0.1" max="10000" step="0.1" value="35" required />
+          </label>
+          <label>
+            Order value (£)
+            <input id="orderValue" type="number" min="0" max="1000000" step="0.01" value="400" required />
+          </label>
+        </div>
+
+        <button class="primary-button" type="submit">Generate impact receipt <span>→</span></button>
+        <p class="privacy-note">No data leaves your browser. No login or paid API required.</p>
+      </form>
+
+      <section class="panel receipt-wrap" aria-live="polite">
+        <div class="panel-heading receipt-heading">
+          <div>
+            <p class="step">STEP 02</p>
+            <h2>Your impact receipt</h2>
+          </div>
+          <button id="downloadBtn" class="download-button" type="button">Download PNG</button>
+        </div>
+
+        <article id="receipt" class="receipt">
+          <div class="receipt-top">
+            <div class="receipt-brand"><span>✦</span> FLEEKPRINT</div>
+            <div class="verified-badge">ESTIMATED IMPACT</div>
+          </div>
+
+          <div class="receipt-title-block">
+            <p id="receiptShop">North London Vintage</p>
+            <h3>Circular impact receipt</h3>
+            <div class="receipt-meta">
+              <span id="receiptOrder">Order FLK-2026-0711</span>
+              <span id="receiptDate"></span>
+            </div>
+          </div>
+
+          <div class="hero-impact">
+            <span id="garmentsValue">50</span>
+            <p>garments kept in circulation</p>
+          </div>
+
+          <div class="impact-grid">
+            <div class="metric-card">
+              <span class="metric-icon">↺</span>
+              <strong id="wasteValue">35 kg</strong>
+              <p>textile waste diverted</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-icon">◌</span>
+              <strong id="carbonValue">210 kg</strong>
+              <p>estimated CO₂e avoided</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-icon">◇</span>
+              <strong id="waterValue">50,000 L</strong>
+              <p>estimated water saved</p>
+            </div>
+            <div class="metric-card">
+              <span class="metric-icon">£</span>
+              <strong id="costValue">£8.00</strong>
+              <p>average cost per garment</p>
+            </div>
+          </div>
+
+          <div class="score-row">
+            <div>
+              <p>CIRCULAR IMPACT SCORE</p>
+              <small>Based on recirculation, weight and category</small>
+            </div>
+            <strong id="scoreValue">86</strong>
+          </div>
+          <div class="score-track"><div id="scoreBar" class="score-bar"></div></div>
+
+          <div class="receipt-footer">
+            <p>Secondhand first. Powered by circular fashion on Fleek.</p>
+            <span id="receiptCode">FP-0711-0050</span>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="methodology">
+      <div>
+        <p class="step">TRANSPARENT BY DESIGN</p>
+        <h2>How the estimate works</h2>
+      </div>
+      <p>FleekPrint uses configurable category-level demonstration factors for carbon and water savings, combined with the order's garment count and weight. All outputs are clearly labelled as estimates and can later be replaced with Fleek-approved lifecycle data.</p>
+      <details>
+        <summary>View methodology and assumptions</summary>
+        <div class="details-content">
+          <p><strong>Textile waste diverted:</strong> total order weight.</p>
+          <p><strong>CO₂e avoided:</strong> order weight × category carbon factor.</p>
+          <p><strong>Water saved:</strong> garment count × category water factor.</p>
+          <p><strong>Impact score:</strong> a demonstration score using garment count, weight and category, capped at 99.</p>
+          <p>This hackathon prototype does not provide audited environmental claims.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>Built for Fleek's Circular Moonshot challenge · Free, static and GitHub Pages ready</footer>
+</body>
+</html>
