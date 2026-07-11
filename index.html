@@ -77,10 +77,10 @@
         <div class="section-head"><div><p class="eyebrow">FLEEK IMPACT CONNECT</p><h2>Turn verified activity into partner value.</h2></div><span class="pill">Connector, not marketplace</span></div>
         <div class="grid two">
           <article class="card">
-            <div class="partner-top"><div><p class="eyebrow">RECOMMENDED PARTNER</p><h2>Carbonfuture</h2><p class="muted">A real carbon-removal infrastructure provider. Fleek prepares a qualified customer and verified activity summary before the user continues to the partner.</p></div><span class="match">BEST MATCH</span></div>
+            <div class="partner-top"><div><p class="eyebrow">RECOMMENDED PARTNER</p><h2>Carbonfuture</h2><p class="muted">Carbonfuture lets businesses procure and retire durable carbon-removal credits, create retirement certificates and use audit-ready data in sustainability reporting. Fleek removes the manual onboarding work by preparing your Impact Passport first.</p></div><span class="match">BEST MATCH</span></div>
             <div id="commercialMetrics" class="commercial-grid"></div>
-            <div class="win-box"><b>Why Carbonfuture benefits</b><span>Pre-qualified customer</span><span>Verified transaction history</span><span>Lower onboarding friction</span><span>Potentially lower acquisition cost</span></div>
-            <button id="connectBtn" class="primary">Review consent and connect</button>
+            <div class="win-box"><b>What the customer receives</b><span>Access to traceable carbon-removal credits</span><span>A custom retirement certificate with registry evidence</span><span>Portfolio and retirement data for sustainability reports</span><span>Audit-ready documentation instead of manual spreadsheets</span></div>
+            <button id="connectBtn" class="primary">Review consent and see your offer</button>
           </article>
           <aside class="card passport"><p class="eyebrow">LIVE IMPACT PASSPORT</p><h2>Second Story Vintage</h2><div id="passportRows"></div></aside>
         </div>
@@ -93,12 +93,31 @@
       </section>
     </main>
 
-    <footer>Prototype only. Impact values and commercial figures are illustrative. Production requires audited factors, Fleek webhooks, secure storage and an approved Carbonfuture partnership.</footer>
+    <footer>Prototype only. Impact values, package pricing and commercial figures are illustrative. Production requires audited factors, Fleek webhooks, secure storage and an approved Carbonfuture partnership.</footer>
   </div>
 
   <div id="receiptModal" class="modal"><div class="modal-card receipt"><p class="eyebrow">AUTOMATIC IMPACT RECEIPT</p><h2 id="receiptTitle"></h2><p id="receiptMeta"></p><div id="receiptGrid" class="receipt-grid"></div><div class="modal-actions"><button onclick="window.print()" class="primary">Save / print</button><button class="secondary" data-close="receiptModal">Close</button></div></div></div>
 
-  <div id="consentModal" class="modal"><div class="modal-card"><p class="eyebrow">IMPACT PASSPORT CONSENT</p><h2>Share this profile with Carbonfuture?</h2><p class="muted">This demo shares only business identity, order count and aggregated impact. Buyer names, seller names, order values and pricing are excluded.</p><div id="consentRows" class="passport compact"></div><label class="consent"><input id="consentCheck" type="checkbox"> I authorise Fleek to prepare this Impact Passport for Carbonfuture.</label><div class="modal-actions"><button id="continueBtn" class="primary">Continue to Carbonfuture</button><button class="secondary" data-close="consentModal">Cancel</button></div></div></div>
+  <div id="consentModal" class="modal"><div class="modal-card"><p class="eyebrow">IMPACT PASSPORT CONSENT</p><h2>Share this profile with Carbonfuture?</h2><p class="muted">This demo shares only business identity, order count and aggregated impact. Buyer names, seller names, order values and pricing are excluded.</p><div id="consentRows" class="passport compact"></div><label class="consent"><input id="consentCheck" type="checkbox"> I authorise Fleek to prepare this Impact Passport for Carbonfuture.</label><div class="modal-actions"><button id="continueBtn" class="primary">Generate my Carbonfuture offer</button><button class="secondary" data-close="consentModal">Cancel</button></div></div></div>
+
+  <div id="offerModal" class="modal"><div class="modal-card offer-card">
+    <p class="eyebrow">SIMULATED PARTNER EXPERIENCE</p>
+    <div class="offer-header"><div><h2>Your Carbonfuture starter pathway</h2><p class="muted">Fleek has pre-filled the information Carbonfuture would normally need from your business.</p></div><span class="match">PASSPORT ACCEPTED</span></div>
+    <div class="offer-summary">
+      <div><small>RECOMMENDED ACTION</small><strong>Retire 1 tonne of durable carbon removal</strong><span>Address part of your remaining footprint with a traceable removal credit.</span></div>
+      <div><small>DEMO PACKAGE VALUE</small><strong>£180</strong><span>Illustrative hackathon pricing—not a Carbonfuture quote.</span></div>
+    </div>
+    <div class="benefit-list">
+      <h3>What you receive</h3>
+      <div><b>✓ Retirement certificate</b><span>A branded certificate with registry links and evidence of retirement.</span></div>
+      <div><b>✓ Sustainability reporting data</b><span>Project, portfolio and retirement information ready for your annual reporting.</span></div>
+      <div><b>✓ Traceable climate action</b><span>Independently verified carbon-removal credits rather than an unsupported offset claim.</span></div>
+      <div><b>✓ Less administration</b><span>Your Fleek Impact Passport pre-populates the business and activity summary.</span></div>
+    </div>
+    <div class="commercial-note"><b>Why use Fleek?</b><span>Without Fleek: find a provider, assemble transaction evidence and enter data manually.</span><span>With Fleek: consent once, review a pre-filled offer and continue to the approved partner.</span></div>
+    <p class="tiny-note">This screen simulates the customer experience Fleek could embed after a commercial partnership. No credit is bought or retired in this prototype.</p>
+    <div class="modal-actions"><button id="realPartnerBtn" class="primary">See Carbonfuture's real buyer offering</button><button class="secondary" data-close="offerModal">Back to Fleek</button></div>
+  </div></div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
