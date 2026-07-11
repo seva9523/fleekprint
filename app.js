@@ -1,6 +1,6 @@
 const STORAGE_KEY='fleek_impact_connect_v1';
 const $=id=>document.getElementById(id);
-const els={purchaseBtn:$('purchaseBtn'),newOrderBtn:$('newOrderBtn'),status:$('status'),buyerMetrics:$('buyerMetrics'),sellerMetrics:$('sellerMetrics'),buyerChart:$('buyerChart'),sellerChart:$('sellerChart'),buyerTable:$('buyerTable'),sellerTable:$('sellerTable'),buyerAdvice:$('buyerAdvice'),buyerAdviceText:$('buyerAdviceText'),sellerAdvice:$('sellerAdvice'),sellerAdviceText:$('sellerAdviceText'),commercialMetrics:$('commercialMetrics'),passportRows:$('passportRows'),receiptModal:$('receiptModal'),receiptTitle:$('receiptTitle'),receiptMeta:$('receiptMeta'),receiptGrid:$('receiptGrid'),consentModal:$('consentModal'),consentRows:$('consentRows'),consentCheck:$('consentCheck'),connectBtn:$('connectBtn'),continueBtn:$('continueBtn')};
+const els={purchaseBtn:$('purchaseBtn'),newOrderBtn:$('newOrderBtn'),status:$('status'),buyerMetrics:$('buyerMetrics'),sellerMetrics:$('sellerMetrics'),buyerChart:$('buyerChart'),sellerChart:$('sellerChart'),buyerTable:$('buyerTable'),sellerTable:$('sellerTable'),buyerAdvice:$('buyerAdvice'),buyerAdviceText:$('buyerAdviceText'),sellerAdvice:$('sellerAdvice'),sellerAdviceText:$('sellerAdviceText'),commercialMetrics:$('commercialMetrics'),passportRows:$('passportRows'),receiptModal:$('receiptModal'),receiptTitle:$('receiptTitle'),receiptMeta:$('receiptMeta'),receiptGrid:$('receiptGrid'),consentModal:$('consentModal'),consentRows:$('consentRows'),consentCheck:$('consentCheck'),connectBtn:$('connectBtn'),continueBtn:$('continueBtn'),offerModal:$('offerModal'),realPartnerBtn:$('realPartnerBtn')};
 
 function enrich(order){const f=IMPACT_FACTORS[order.category];return{...order,receiptId:`IMP-${order.id}`,categoryLabel:f.label,co2:Math.round(order.weight*f.co2),water:Math.round(order.items*f.water),cost:order.value/order.items};}
 function seeded(){return SEED_ORDERS.map(enrich);}
@@ -29,5 +29,9 @@ document.querySelectorAll('[data-open-connect]').forEach(b=>b.addEventListener('
 document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',resetDemo));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).classList.remove('show')));
 document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
-els.purchaseBtn.addEventListener('click',completePurchase);els.newOrderBtn.addEventListener('click',()=>{els.purchaseBtn.classList.remove('hidden');els.newOrderBtn.classList.add('hidden');els.status.classList.add('hidden')});els.connectBtn.addEventListener('click',()=>{render();els.consentCheck.checked=false;els.consentModal.classList.add('show')});els.continueBtn.addEventListener('click',()=>{if(!els.consentCheck.checked){alert('Please confirm consent before continuing.');return;}window.open('https://www.carbonfuture.com/products/api','_blank','noopener,noreferrer');els.consentModal.classList.remove('show');});
+els.purchaseBtn.addEventListener('click',completePurchase);
+els.newOrderBtn.addEventListener('click',()=>{els.purchaseBtn.classList.remove('hidden');els.newOrderBtn.classList.add('hidden');els.status.classList.add('hidden')});
+els.connectBtn.addEventListener('click',()=>{render();els.consentCheck.checked=false;els.consentModal.classList.add('show')});
+els.continueBtn.addEventListener('click',()=>{if(!els.consentCheck.checked){alert('Please confirm consent before continuing.');return;}els.consentModal.classList.remove('show');els.offerModal.classList.add('show');});
+els.realPartnerBtn.addEventListener('click',()=>window.open('https://www.carbonfuture.com/buyers','_blank','noopener,noreferrer'));
 render();
